@@ -1,4 +1,6 @@
 
 venv/
+gapi/
 *.pyc
 db.sqlite3
+.vscode/
