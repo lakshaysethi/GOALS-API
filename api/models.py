@@ -8,10 +8,13 @@ from django.db import models
 
 class Goal(models.Model):
     name = models.CharField(max_length=25)
+    achieved = models.BooleanField(default=False)
+    archieved = models.BooleanField(default=False)
+
 
 
 class Task(Goal):
-    goal = models.ForeignKey(to= Goal, related_name='tasks', on_delete = models.CASCADE)
+    super_goal = models.ForeignKey(blank = True, null=True,to= Goal, related_name='task_list', on_delete = models.CASCADE)
 
 
 
